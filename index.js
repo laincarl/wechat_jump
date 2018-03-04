@@ -136,7 +136,7 @@ function leap() {
               console.log('跳跃距离:', distance);
               const press = `adb shell input swipe ${parseInt(Math.random() * 500)} ${parseInt(Math.random() * 500)} ${parseInt(Math.random() * 500)} ${parseInt(Math.random() * 500)} ${parseInt(90 + multi * distance)}`;
               execCommand(press).then(() => {
-                // console.log('分数:', score++);
+                console.log('分数:', score++);
                 setTimeout(leap, parseInt(1500 + Math.random() * 500));
               });
             });

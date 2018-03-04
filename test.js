@@ -7,8 +7,8 @@ const multi = 1.58;
 let score = 0;
 async function execCommand(command) {
   const { stdout, stderr } = await exec(command);
-  // stdout && console.log('stdout:', stdout);
-  // stderr && console.log('stderr:', stderr);
+  stdout && console.log('stdout:', stdout);
+  stderr && console.log('stderr:', stderr);
 }
 const screenShoot = 'adb shell screencap -p /sdcard/autojump.png';
 const getImg = 'adb pull /sdcard/autojump.png . ./';
@@ -84,8 +84,10 @@ async function findTem() {
     return topLeft;
   }
 }
-// findShape();
-findTem().then((find) => {
-  findShape(find);
-});
+const ccc = 'adb devices';
+execCommand(ccc)
+
+// findTem().then((find) => {
+//   findShape(find);
+// });
 
